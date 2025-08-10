@@ -102,8 +102,8 @@ const App = () => {
   const totalAgility = team.reduce((sum, fighter) => sum + fighter.agility,0)
   
   // Function to handle removing fighter from the team
-  function handleRemoveFighter() {
-    setTeam(prev => prev.filter((fighterid) => fighterid.id !== fighter.id))
+  function handleRemoveFighter(fighter) {
+    setTeam(prev => prev.filter((fighterid) =>  fighterid.id !== fighter.id))
     setMoney(prev => prev + fighter.price)
     setZombieFighters(prev => [...prev, fighter].sort((a, b) => a.id - b.id))
   }
